@@ -1,0 +1,28 @@
+<div class="col-3 md-3">
+  <h2>User info</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>name</th>
+        <td><%= user.name %></td>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <td><%= user.introduction %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "編集",edit_user_path(user.id),class: "btn btn-success" %>
+  <h2>New Book</h2>
+  <%= form_with model: book do |f| %>
+    <div class="field">
+      <%= f.label "title" %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label "opinion" %><br />
+      <%= f.text_field :body %>
+    </div>
+      <%= f.submit "投稿" %>
+  <% end %>
+</div>

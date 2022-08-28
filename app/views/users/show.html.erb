@@ -1,20 +1,24 @@
 <div class="container px-5 px-sm-0 mt-5">
   <div class="row">
-    <div class="col-3 md-3">
-      <h2>User info</h2>
-      <table>
+    <%= render "UserBook", user: @user,book: @book %>
+    <div class="col-8 md-3 offset-md-1">
+      <h2>Book</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr>
-            <th>name</th>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <td><%= @user.introduction %></td>
-          </tr>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.title %></td>
+              <td><%= book.body %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
-    <div class="col-8 md-3 offset-md-1">b</div>
   </div>
 </div>
